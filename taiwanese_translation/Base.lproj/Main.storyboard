@@ -1,26 +1,85 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="taiwanese_translation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLk-wD-wJp">
+                                <rect key="frame" x="136.5" y="269" width="47" height="30"/>
+                                <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="uploadfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uVO-lo-LcP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghp-RL-EpZ">
+                                <rect key="frame" x="125" y="219" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="辨識結果" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3s-Xc-lVn">
+                                <rect key="frame" x="114.5" y="173" width="91" height="26"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqf-Te-EOE">
+                                <rect key="frame" x="68" y="241" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play_recording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7k-8b-mGI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-Qb-osX">
+                                <rect key="frame" x="208" y="241" width="49" height="30"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="start_recording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooW-4o-GSd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Aqf-Te-EOE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-77" id="8Ce-Jg-vmx"/>
+                            <constraint firstItem="w3s-Xc-lVn" firstAttribute="centerX" secondItem="eLk-wD-wJp" secondAttribute="centerX" id="Ae8-gw-ZwB"/>
+                            <constraint firstItem="eLk-wD-wJp" firstAttribute="top" secondItem="yEt-Qb-osX" secondAttribute="bottom" constant="-2" id="FvY-Iw-VS9"/>
+                            <constraint firstItem="eLk-wD-wJp" firstAttribute="top" secondItem="Aqf-Te-EOE" secondAttribute="bottom" constant="-2.5" id="MtN-Gy-6jR"/>
+                            <constraint firstItem="yEt-Qb-osX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="72.5" id="P6J-iL-KEP"/>
+                            <constraint firstItem="ghp-RL-EpZ" firstAttribute="centerX" secondItem="eLk-wD-wJp" secondAttribute="centerX" id="j69-cR-6sV"/>
+                            <constraint firstItem="eLk-wD-wJp" firstAttribute="top" secondItem="w3s-Xc-lVn" secondAttribute="bottom" constant="70" id="jOA-kg-6od"/>
+                            <constraint firstItem="eLk-wD-wJp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nNB-mi-rqB"/>
+                            <constraint firstItem="eLk-wD-wJp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="swV-VM-uXg"/>
+                            <constraint firstItem="eLk-wD-wJp" firstAttribute="top" secondItem="ghp-RL-EpZ" secondAttribute="bottom" constant="29" id="wEB-dK-DaS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="play_btn_ref" destination="Aqf-Te-EOE" id="U3y-ZP-4Oa"/>
+                        <outlet property="recognized_text" destination="w3s-Xc-lVn" id="IAE-DA-b7p"/>
+                        <outlet property="record_btn_ref" destination="yEt-Qb-osX" id="gfY-yo-fLW"/>
+                        <outlet property="recordingTimeLabel" destination="ghp-RL-EpZ" id="NgC-jE-cSC"/>
+                        <outlet property="upload_btn_ref" destination="eLk-wD-wJp" id="pzN-lA-Y9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="91.875" y="42.25352112676056"/>
         </scene>
     </scenes>
 </document>

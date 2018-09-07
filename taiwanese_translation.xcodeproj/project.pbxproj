@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E71E91810F9B31D268ED9D /* Pods_taiwanese_translation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC11AE235FF4C50CF941591 /* Pods_taiwanese_translation.framework */; };
+		7E6431C1EC952DEFD1FEEE18 /* Pods_taiwanese_translationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE300DA35BFECECEDDA69F42 /* Pods_taiwanese_translationUITests.framework */; };
+		D07DCE95A900CCB3FBE1241B /* Pods_taiwanese_translationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19ACBC2585766BF16384822D /* Pods_taiwanese_translationTests.framework */; };
 		F05D84ED210C9DCC00529FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D84EC210C9DCC00529FD3 /* AppDelegate.swift */; };
 		F05D84EF210C9DCC00529FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D84EE210C9DCC00529FD3 /* ViewController.swift */; };
 		F05D84F2210C9DCD00529FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D84F0210C9DCD00529FD3 /* Main.storyboard */; };
@@ -34,6 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0561F77E9698D85FC10FB8F5 /* Pods-taiwanese_translationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiwanese_translationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-taiwanese_translationTests/Pods-taiwanese_translationTests.release.xcconfig"; sourceTree = "<group>"; };
+		187C4D6063F6924B77BD1F8B /* Pods-taiwanese_translationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiwanese_translationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiwanese_translationTests/Pods-taiwanese_translationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		19ACBC2585766BF16384822D /* Pods_taiwanese_translationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiwanese_translationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF2DDC99457E919263978EE /* Pods-taiwanese_translation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiwanese_translation.release.xcconfig"; path = "Pods/Target Support Files/Pods-taiwanese_translation/Pods-taiwanese_translation.release.xcconfig"; sourceTree = "<group>"; };
+		583C487D2890E80B2F0C279A /* Pods-taiwanese_translationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiwanese_translationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiwanese_translationUITests/Pods-taiwanese_translationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6EC11AE235FF4C50CF941591 /* Pods_taiwanese_translation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiwanese_translation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7495547D0A8AAD521095618D /* Pods-taiwanese_translation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiwanese_translation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiwanese_translation/Pods-taiwanese_translation.debug.xcconfig"; sourceTree = "<group>"; };
+		9E4BD02E383AE01F7F1211C7 /* Pods-taiwanese_translationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiwanese_translationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-taiwanese_translationUITests/Pods-taiwanese_translationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BE300DA35BFECECEDDA69F42 /* Pods_taiwanese_translationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiwanese_translationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05D84E9210C9DCB00529FD3 /* taiwanese_translation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taiwanese_translation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05D84EC210C9DCC00529FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F05D84EE210C9DCC00529FD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E71E91810F9B31D268ED9D /* Pods_taiwanese_translation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07DCE95A900CCB3FBE1241B /* Pods_taiwanese_translationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E6431C1EC952DEFD1FEEE18 /* Pods_taiwanese_translationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53B75917C8252D907F5A3BFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7495547D0A8AAD521095618D /* Pods-taiwanese_translation.debug.xcconfig */,
+				3CF2DDC99457E919263978EE /* Pods-taiwanese_translation.release.xcconfig */,
+				187C4D6063F6924B77BD1F8B /* Pods-taiwanese_translationTests.debug.xcconfig */,
+				0561F77E9698D85FC10FB8F5 /* Pods-taiwanese_translationTests.release.xcconfig */,
+				583C487D2890E80B2F0C279A /* Pods-taiwanese_translationUITests.debug.xcconfig */,
+				9E4BD02E383AE01F7F1211C7 /* Pods-taiwanese_translationUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		66B6583D07FB7364A99BE25A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EC11AE235FF4C50CF941591 /* Pods_taiwanese_translation.framework */,
+				19ACBC2585766BF16384822D /* Pods_taiwanese_translationTests.framework */,
+				BE300DA35BFECECEDDA69F42 /* Pods_taiwanese_translationUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F05D84E0210C9DC700529FD3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				F05D8500210C9DCF00529FD3 /* taiwanese_translationTests */,
 				F05D850B210C9DCF00529FD3 /* taiwanese_translationUITests */,
 				F05D84EA210C9DCB00529FD3 /* Products */,
+				53B75917C8252D907F5A3BFA /* Pods */,
+				66B6583D07FB7364A99BE25A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F05D8511210C9DCF00529FD3 /* Build configuration list for PBXNativeTarget "taiwanese_translation" */;
 			buildPhases = (
+				A0ADFE42C763D30F1AF2F919 /* [CP] Check Pods Manifest.lock */,
 				F05D84E5210C9DC800529FD3 /* Sources */,
 				F05D84E6210C9DC800529FD3 /* Frameworks */,
 				F05D84E7210C9DC800529FD3 /* Resources */,
+				108D433930123F1A6C7AE22C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F05D8514210C9DCF00529FD3 /* Build configuration list for PBXNativeTarget "taiwanese_translationTests" */;
 			buildPhases = (
+				C95AF0FE135EC7B2B7161376 /* [CP] Check Pods Manifest.lock */,
 				F05D84F9210C9DCF00529FD3 /* Sources */,
 				F05D84FA210C9DCF00529FD3 /* Frameworks */,
 				F05D84FB210C9DCF00529FD3 /* Resources */,
@@ -167,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F05D8517210C9DCF00529FD3 /* Build configuration list for PBXNativeTarget "taiwanese_translationUITests" */;
 			buildPhases = (
+				ED3769CB4F65C76319A1B5B3 /* [CP] Check Pods Manifest.lock */,
 				F05D8504210C9DCF00529FD3 /* Sources */,
 				F05D8505210C9DCF00529FD3 /* Frameworks */,
 				F05D8506210C9DCF00529FD3 /* Resources */,
@@ -188,20 +232,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = taiwanspeech;
 				TargetAttributes = {
 					F05D84E8210C9DC800529FD3 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = T7P4U2YFU6;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					F05D84FC210C9DCF00529FD3 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F05D84E8210C9DC800529FD3;
 					};
 					F05D8507210C9DCF00529FD3 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F05D84E8210C9DC800529FD3;
 					};
@@ -253,6 +301,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		108D433930123F1A6C7AE22C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-taiwanese_translation/Pods-taiwanese_translation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-taiwanese_translation/Pods-taiwanese_translation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0ADFE42C763D30F1AF2F919 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-taiwanese_translation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C95AF0FE135EC7B2B7161376 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-taiwanese_translationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED3769CB4F65C76319A1B5B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-taiwanese_translationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F05D84E5210C9DC800529FD3 /* Sources */ = {
@@ -325,7 +448,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -333,7 +458,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -362,6 +491,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -376,7 +506,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -384,7 +516,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -405,6 +541,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -412,30 +549,45 @@
 		};
 		F05D8512210C9DCF00529FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7495547D0A8AAD521095618D /* Pods-taiwanese_translation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7P4U2YFU6;
 				INFOPLIST_FILE = taiwanese_translation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taiwanspeech.taiwanese-translation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		F05D8513210C9DCF00529FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CF2DDC99457E919263978EE /* Pods-taiwanese_translation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7P4U2YFU6;
 				INFOPLIST_FILE = taiwanese_translation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taiwanspeech.taiwanese-translation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 		F05D8515210C9DCF00529FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 187C4D6063F6924B77BD1F8B /* Pods-taiwanese_translationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -443,13 +595,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taiwanspeech.taiwanese-translationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/taiwanese_translation.app/taiwanese_translation";
 			};
 			name = Debug;
 		};
 		F05D8516210C9DCF00529FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0561F77E9698D85FC10FB8F5 /* Pods-taiwanese_translationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -457,33 +611,38 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taiwanspeech.taiwanese-translationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/taiwanese_translation.app/taiwanese_translation";
 			};
 			name = Release;
 		};
 		F05D8518210C9DCF00529FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 583C487D2890E80B2F0C279A /* Pods-taiwanese_translationUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = taiwanese_translationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taiwanspeech.taiwanese-translationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = taiwanese_translation;
 			};
 			name = Debug;
 		};
 		F05D8519210C9DCF00529FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E4BD02E383AE01F7F1211C7 /* Pods-taiwanese_translationUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = taiwanese_translationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taiwanspeech.taiwanese-translationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = taiwanese_translation;
 			};
 			name = Release;
@@ -507,6 +666,7 @@
 				F05D8513210C9DCF00529FD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F05D8514210C9DCF00529FD3 /* Build configuration list for PBXNativeTarget "taiwanese_translationTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +675,7 @@
 				F05D8516210C9DCF00529FD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F05D8517210C9DCF00529FD3 /* Build configuration list for PBXNativeTarget "taiwanese_translationUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +684,7 @@
 				F05D8519210C9DCF00529FD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
