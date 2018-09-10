@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
@@ -213,53 +214,24 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     @IBAction func uploadfile(_ sender: Any) {
         if FileManager.default.fileExists(atPath: getFileUrl().path)
         {
-            /*
-            let client=TCPClient(address:"140.116.245.151" ,port:2803)
-            switch client.connect(timeout:10){
-            case .success:
-                let token:String="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJKV1QiLCJhdWQiOiJ3bW1rcy5jc2llLmVkdS50dyIsInNlcnZpY2UiOiI4ODgiLCJ1c2VybmFtZSI6Imxvcm5lIiwic2NvcGVzIjoiMSIsInN1YiI6IjIiLCJpYXQiOjE1MzMwMzcxMDEsImV4cCI6MTU5NjEwOTEwMSwibmJmIjoxNTMzMDM3MTAxfQ.ROgcmbmXS2KYmsKkdZCI3UI56iLdLneXlKaj4qJujCYSqlpPKOHVN9J0eHR_OrYg-sMQEf06XiO52KqO-makYBJ5bRe134M8UcU06XrkC6v0KUMtJHtkBTpCAIIa14__ifZjlFFA4EGcX4DY0r8XFEkuEpEu3Gb_88_fJmUquXw"
-                
-                //let fileURL = getFileUrl()
-                
-                let data:String = token+String("@@@S07     Atestdata")
-                var length:String=String(data.count)
-                length=length+data
-                print(length)
-                switch client.send(string:length){
-                case .success:
-                    guard let data=client.read(1024*10)else {return}
-                    if let result = String(bytes:data,encoding:.utf8){
-                        self.recognized_text.text="\(result)"
-                        
-                    }
-                case .failure(let error):
-                    print(error)
-                    
-                }                
-            case .failure(let error):
-                print(error)
-            }
-            */
             let token:String="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJKV1QiLCJhdWQiOiJ3bW1rcy5jc2llLmVkdS50dyIsInNlcnZpY2UiOiI4ODgiLCJ1c2VybmFtZSI6Imxvcm5lIiwic2NvcGVzIjoiMSIsInN1YiI6IjIiLCJpYXQiOjE1MzMwMzcxMDEsImV4cCI6MTU5NjEwOTEwMSwibmJmIjoxNTMzMDM3MTAxfQ.ROgcmbmXS2KYmsKkdZCI3UI56iLdLneXlKaj4qJujCYSqlpPKOHVN9J0eHR_OrYg-sMQEf06XiO52KqO-makYBJ5bRe134M8UcU06XrkC6v0KUMtJHtkBTpCAIIa14__ifZjlFFA4EGcX4DY0r8XFEkuEpEu3Gb_88_fJmUquXw"
             
             let fileURL = getFileUrl()
             
-            
-            var data:String = token+String("@@@S07     A")
+            var data:String = token+String("@@@S00-05  A")
 
             do{
                 let audioData = try Data(contentsOf: fileURL)
+                let mydata = Data(data.utf8)
                 
-                let encodedString = audioData.base64EncodedString()
-                
-                data+=encodedString
-                print(data)
+                print(mydata+audioData)
                 let url = URL(string: "http://140.116.245.217:2803")!
                 var request = URLRequest(url: url)
                 request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                 request.httpMethod = "POST"
                 
-                request.httpBody = data.data(using: .utf8)
+                request.httpBody = mydata+audioData
+                //request.httpBody = encodedString.data(using: .utf8)
                 let task = URLSession.shared.dataTask(with: request) { data, response, error in
                     guard let data = data, error == nil else {                                                 // check for fundamental networking error
                         print("error=\(String(describing: error))")
@@ -280,15 +252,11 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
             }catch{
                 print("error")
             }
-            
-            
         }
         else
         {
             display_alert(msg_title: "Error", msg_desc: "Audio file has not been recorded yet!", action_title: "OK")
         }
     }
-    
-    
 }
 
