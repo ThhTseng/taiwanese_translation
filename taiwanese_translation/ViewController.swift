@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import Alamofire
 
 class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
@@ -210,28 +209,35 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
         })
         present(ac, animated: true)
     }
+    func textchange(text: String){
+        DispatchQueue.main.async{
+            self.recognized_text.text = text
+            self.upload_btn_ref.isEnabled = true
+        }
+    }
     
     @IBAction func uploadfile(_ sender: Any) {
         if FileManager.default.fileExists(atPath: getFileUrl().path)
         {
             let token:String="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJKV1QiLCJhdWQiOiJ3bW1rcy5jc2llLmVkdS50dyIsInNlcnZpY2UiOiI4ODgiLCJ1c2VybmFtZSI6Imxvcm5lIiwic2NvcGVzIjoiMSIsInN1YiI6IjIiLCJpYXQiOjE1MzMwMzcxMDEsImV4cCI6MTU5NjEwOTEwMSwibmJmIjoxNTMzMDM3MTAxfQ.ROgcmbmXS2KYmsKkdZCI3UI56iLdLneXlKaj4qJujCYSqlpPKOHVN9J0eHR_OrYg-sMQEf06XiO52KqO-makYBJ5bRe134M8UcU06XrkC6v0KUMtJHtkBTpCAIIa14__ifZjlFFA4EGcX4DY0r8XFEkuEpEu3Gb_88_fJmUquXw"
             
+            var data:String = token+String("@@@main    A")
+            
+            upload_btn_ref.isEnabled = false
             let fileURL = getFileUrl()
             
-            var data:String = token+String("@@@S00-05  A")
-
             do{
                 let audioData = try Data(contentsOf: fileURL)
                 let mydata = Data(data.utf8)
                 
-                print(mydata+audioData)
-                let url = URL(string: "http://140.116.245.217:2803")!
+                //print(mydata+audioData)
+                let url = URL(string: "http://140.116.245.149:2803")!
                 var request = URLRequest(url: url)
                 request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                 request.httpMethod = "POST"
                 
                 request.httpBody = mydata+audioData
-                //request.httpBody = encodedString.data(using: .utf8)
+                
                 let task = URLSession.shared.dataTask(with: request) { data, response, error in
                     guard let data = data, error == nil else {                                                 // check for fundamental networking error
                         print("error=\(String(describing: error))")
@@ -243,12 +249,16 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
                         print("response = \(String(describing: response))")
                     }
                     
-                    let responseString = String(data: data, encoding: .utf8)
-                    //self.recognized_text.text="\(String(describing: responseString))"
-                    print("responseString = \(String(describing: responseString))")
+                    guard let responseString = String(data: data, encoding: .utf8) else { return }
+                    
+                    let splitarray = responseString.components(separatedBy: "result:")
+                    
+                   
+                    print("responseString = \(String(describing: splitarray[1]))")
+                    self.textchange(text: splitarray[1])
+                    
                 }
                 task.resume()
-
             }catch{
                 print("error")
             }
