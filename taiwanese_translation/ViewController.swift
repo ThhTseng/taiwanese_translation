@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftSocket
 
 class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
@@ -26,9 +27,13 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     var isRecording = false
     var isPlaying = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         check_record_permission()
+        //var iStream: InputStream? = nil
+        //var oStream: OutputStream? = nil
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {
@@ -219,7 +224,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     @IBAction func uploadfile(_ sender: Any) {
         if FileManager.default.fileExists(atPath: getFileUrl().path)
         {
-            let token:String="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJKV1QiLCJhdWQiOiJ3bW1rcy5jc2llLmVkdS50dyIsInNlcnZpY2UiOiI4ODgiLCJ1c2VybmFtZSI6Imxvcm5lIiwic2NvcGVzIjoiMSIsInN1YiI6IjIiLCJpYXQiOjE1MzMwMzcxMDEsImV4cCI6MTU5NjEwOTEwMSwibmJmIjoxNTMzMDM3MTAxfQ.ROgcmbmXS2KYmsKkdZCI3UI56iLdLneXlKaj4qJujCYSqlpPKOHVN9J0eHR_OrYg-sMQEf06XiO52KqO-makYBJ5bRe134M8UcU06XrkC6v0KUMtJHtkBTpCAIIa14__ifZjlFFA4EGcX4DY0r8XFEkuEpEu3Gb_88_fJmUquXw"
+            let token:String="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpZCI6MzcsInVzZXJfaWQiOiIyNSIsInNlcnZpY2VfaWQiOiIzIiwic2NvcGVzIjoiMCIsInN1YiI6IiIsImlhdCI6MTUzNzg3ODE1MywibmJmIjoxNTM3ODc4MTUzLCJleHAiOjE1NDU2NTQxNTMsImlzcyI6IkpXVCIsImF1ZCI6IndtbWtzLmNzaWUuZWR1LnR3IiwidmVyIjowLjF9.UaH-4s1mxCUsKghfFP3-wEZe9FY1o4uYvl-SvYq9YEDUBvewpDTZ0TXWANwie_ohis2J8RwBUHGDmSiMv7TbaqqiBPldhmvo98_SUOUOV_Ai39z5ZNOkxxZsaygjpkQzvE8oz8ZvN2fcJ8AceElSUuzv52mT05nEBUQ4lUHkr0I"
             
             var data:String = token+String("@@@main    A")
             
@@ -228,40 +233,40 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
             
             do{
                 let audioData = try Data(contentsOf: fileURL)
-                let mydata = Data(data.utf8)
+                let mydata = Data(data.utf8)+audioData
+                var count = mydata.count.bigEndian
+                let datacount = Data(bytes: &count ,
+                                     count: MemoryLayout.size(ofValue: count))
                 
-                //print(mydata+audioData)
-                let url = URL(string: "http://140.116.245.149:2803")!
-                var request = URLRequest(url: url)
-                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-                request.httpMethod = "POST"
-                
-                request.httpBody = mydata+audioData
-                
-                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                        print("error=\(String(describing: error))")
-                        return
+                print(datacount)
+                let client = TCPClient(address: "140.116.245.149", port: 2802)
+                switch client.connect(timeout: 5) {
+                case .success:
+                    switch client.send(data : datacount+mydata) {
+                    case .success:
+                        guard let data = client.read(1024,timeout: 10) else { return }
+
+                        if let response = String(bytes: data, encoding: .utf8) {
+                            let splitarray = response.components(separatedBy: "result:")
+                            
+                            
+                            print("responseString = \(String(describing: splitarray[1]))")
+                            self.textchange(text: splitarray[1])
+                        }
+                        
+                        
+                    case .failure(let error):
+                        print(error)
                     }
-                    
-                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                        print("response = \(String(describing: response))")
-                    }
-                    
-                    guard let responseString = String(data: data, encoding: .utf8) else { return }
-                    
-                    let splitarray = responseString.components(separatedBy: "result:")
-                    
-                   
-                    print("responseString = \(String(describing: splitarray[1]))")
-                    self.textchange(text: splitarray[1])
-                    
+                case .failure(let error):
+                    print(error)
                 }
-                task.resume()
+                
+                
             }catch{
                 print("error")
             }
+            
         }
         else
         {

@@ -176,6 +176,7 @@
 				F05D84E5210C9DC800529FD3 /* Sources */,
 				F05D84E6210C9DC800529FD3 /* Frameworks */,
 				F05D84E7210C9DC800529FD3 /* Resources */,
+				7DBE56187F24D72CFA81226D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +303,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7DBE56187F24D72CFA81226D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-taiwanese_translation/Pods-taiwanese_translation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-taiwanese_translation/Pods-taiwanese_translation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A0ADFE42C763D30F1AF2F919 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
