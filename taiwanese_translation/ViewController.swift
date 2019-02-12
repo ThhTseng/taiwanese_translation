@@ -224,16 +224,19 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     @IBAction func uploadfile(_ sender: Any) {
         if FileManager.default.fileExists(atPath: getFileUrl().path)
         {
-            let token:String="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpZCI6MzcsInVzZXJfaWQiOiIyNSIsInNlcnZpY2VfaWQiOiIzIiwic2NvcGVzIjoiMCIsInN1YiI6IiIsImlhdCI6MTUzNzg3ODE1MywibmJmIjoxNTM3ODc4MTUzLCJleHAiOjE1NDU2NTQxNTMsImlzcyI6IkpXVCIsImF1ZCI6IndtbWtzLmNzaWUuZWR1LnR3IiwidmVyIjowLjF9.UaH-4s1mxCUsKghfFP3-wEZe9FY1o4uYvl-SvYq9YEDUBvewpDTZ0TXWANwie_ohis2J8RwBUHGDmSiMv7TbaqqiBPldhmvo98_SUOUOV_Ai39z5ZNOkxxZsaygjpkQzvE8oz8ZvN2fcJ8AceElSUuzv52mT05nEBUQ4lUHkr0I"
-            
+            //金鑰
+            let token:String=""
+            //選用模組,之後有針對醫療詞彙加強會更改main的字串
             var data:String = token+String("@@@main    A")
             
             upload_btn_ref.isEnabled = false
             let fileURL = getFileUrl()
             
             do{
+                //音檔
                 let audioData = try Data(contentsOf: fileURL)
                 let mydata = Data(data.utf8)+audioData
+                //**data count要用big endian
                 var count = mydata.count.bigEndian
                 let datacount = Data(bytes: &count ,
                                      count: MemoryLayout.size(ofValue: count))
@@ -249,9 +252,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
                         if let response = String(bytes: data, encoding: .utf8) {
                             let splitarray = response.components(separatedBy: "result:")
                             
-                            
-                            print("responseString = \(String(describing: splitarray[1]))")
-                            self.textchange(text: splitarray[1])
+                            //輸出
+                            print("responseString = \(String(describing: splitarray[0]))")
+                            self.textchange(text: splitarray[0])
                         }
                         
                         

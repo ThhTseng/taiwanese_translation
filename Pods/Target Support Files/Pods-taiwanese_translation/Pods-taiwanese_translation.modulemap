@@ -1,0 +1,6 @@
+framework module Pods_taiwanese_translation {
+  umbrella header "Pods-taiwanese_translation-umbrella.h"
+
+  export *
+  module * { export * }
+}

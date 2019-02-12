@@ -1,0 +1,6 @@
+framework module Pods_taiwanese_translationUITests {
+  umbrella header "Pods-taiwanese_translationUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
