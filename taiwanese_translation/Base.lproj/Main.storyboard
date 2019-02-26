@@ -22,61 +22,157 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="辨識結果" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3s-Xc-lVn">
-                                <rect key="frame" x="35" y="52" width="250" height="288"/>
+                                <rect key="frame" x="35" y="78" width="250" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="288" id="6e3-ma-SMy"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="9UX-qC-EgV"/>
+                                    <constraint firstAttribute="height" constant="43" id="6e3-ma-SMy"/>
+                                    <constraint firstAttribute="width" constant="250" id="9UX-qC-EgV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="辨識結果" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2eH-SO-1Va">
+                                <rect key="frame" x="35" y="293" width="250" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="SbK-6b-wL9"/>
+                                    <constraint firstAttribute="width" constant="250" id="dp9-vn-cKp"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLk-wD-wJp">
-                                <rect key="frame" x="129" y="435" width="62" height="30"/>
+                                <rect key="frame" x="129" y="210" width="62" height="30"/>
                                 <state key="normal" title="上傳辨識"/>
                                 <connections>
                                     <action selector="uploadfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uVO-lo-LcP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKB-MC-Fy3">
+                                <rect key="frame" x="199" y="339" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="上傳辨識"/>
+                                <connections>
+                                    <action selector="uploadfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nb7-bq-MiJ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqf-Te-EOE">
-                                <rect key="frame" x="74" y="389" width="30" height="30"/>
+                                <rect key="frame" x="74" y="164" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="play_recording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7k-8b-mGI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-Qb-osX">
-                                <rect key="frame" x="212" y="389" width="49" height="30"/>
-                                <state key="normal" title="Record"/>
+                                <rect key="frame" x="221" y="164" width="31" height="30"/>
+                                <state key="normal" title="錄音"/>
                                 <connections>
                                     <action selector="start_recording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooW-4o-GSd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghp-RL-EpZ">
-                                <rect key="frame" x="125" y="361" width="70" height="21"/>
+                                <rect key="frame" x="125" y="136" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyS-BL-65V">
+                                <rect key="frame" x="35" y="27" width="178" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="1.吃藥會過敏嗎?">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playaudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4OZ-i6-OT1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sw-O6-P0F">
+                                <rect key="frame" x="35" y="241" width="208" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="2.你有高血壓嗎？">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="playaudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cj7-uf-66s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rij-mK-IYG">
+                                <rect key="frame" x="35" y="370" width="209" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="3.你有糖尿病嗎？">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="playaudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SXr-OX-bRp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="辨識結果" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xfu-FW-tmA">
+                                <rect key="frame" x="35" y="422" width="250" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="EEf-98-4R5"/>
+                                    <constraint firstAttribute="width" constant="250" id="VfT-zj-myc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfa-ku-5RU">
+                                <rect key="frame" x="44" y="339" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="錄音"/>
+                                <connections>
+                                    <action selector="start_recording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjh-Xy-bof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4q-z2-yRh">
+                                <rect key="frame" x="44" y="477" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="錄音"/>
+                                <connections>
+                                    <action selector="start_recording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWj-ot-Cxt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8F-Sr-sdI">
+                                <rect key="frame" x="199" y="477" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="上傳辨識"/>
+                                <connections>
+                                    <action selector="uploadfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXG-EU-XK0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eLk-wD-wJp" firstAttribute="top" secondItem="ghp-RL-EpZ" secondAttribute="bottom" constant="53" id="32G-X1-WDW"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eLk-wD-wJp" secondAttribute="bottom" constant="103" id="7L2-Oz-dX7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Aqf-Te-EOE" secondAttribute="bottom" constant="149" id="85g-b7-KKG"/>
+                            <constraint firstItem="2eH-SO-1Va" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="3b0-3l-MCa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eLk-wD-wJp" secondAttribute="bottom" constant="328" id="7L2-Oz-dX7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Aqf-Te-EOE" secondAttribute="bottom" constant="374" id="85g-b7-KKG"/>
                             <constraint firstItem="Aqf-Te-EOE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="8gT-fr-huz"/>
                             <constraint firstItem="w3s-Xc-lVn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CUk-sV-SVb"/>
+                            <constraint firstItem="0sw-O6-P0F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="ECy-0E-1rH"/>
+                            <constraint firstItem="2eH-SO-1Va" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GgT-8E-iIl"/>
                             <constraint firstItem="eLk-wD-wJp" firstAttribute="centerX" secondItem="ghp-RL-EpZ" secondAttribute="centerX" id="OyV-aX-kdl"/>
                             <constraint firstItem="yEt-Qb-osX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="76.5" id="P6J-iL-KEP"/>
-                            <constraint firstItem="Aqf-Te-EOE" firstAttribute="top" secondItem="w3s-Xc-lVn" secondAttribute="bottom" constant="49" id="Vbr-20-8R8"/>
+                            <constraint firstItem="Aqf-Te-EOE" firstAttribute="top" secondItem="w3s-Xc-lVn" secondAttribute="bottom" constant="43" id="Vbr-20-8R8"/>
+                            <constraint firstItem="MyS-BL-65V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="WFo-v0-4Y2"/>
+                            <constraint firstItem="Xfu-FW-tmA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="Wgy-6a-9Vt"/>
                             <constraint firstItem="yEt-Qb-osX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Aqf-Te-EOE" secondAttribute="trailing" constant="8" symbolic="YES" id="bhH-zj-axe"/>
+                            <constraint firstItem="2eH-SO-1Va" firstAttribute="top" secondItem="0sw-O6-P0F" secondAttribute="bottom" constant="8" id="hYD-9B-Vr0"/>
+                            <constraint firstItem="Xfu-FW-tmA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ih5-rB-H77"/>
+                            <constraint firstItem="0sw-O6-P0F" firstAttribute="top" secondItem="eLk-wD-wJp" secondAttribute="bottom" constant="1" id="kga-nf-Agn"/>
+                            <constraint firstItem="Rij-mK-IYG" firstAttribute="top" secondItem="2eH-SO-1Va" secondAttribute="bottom" constant="30" id="p7V-pv-iYk"/>
+                            <constraint firstItem="Xfu-FW-tmA" firstAttribute="top" secondItem="Rij-mK-IYG" secondAttribute="bottom" constant="8" id="p9s-z8-hRw"/>
+                            <constraint firstItem="Rij-mK-IYG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="suv-6C-8Ow"/>
                             <constraint firstItem="Aqf-Te-EOE" firstAttribute="baseline" secondItem="yEt-Qb-osX" secondAttribute="baseline" id="svS-d7-yRm"/>
+                            <constraint firstItem="MyS-BL-65V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="uHc-ea-u1p"/>
                             <constraint firstItem="eLk-wD-wJp" firstAttribute="centerX" secondItem="w3s-Xc-lVn" secondAttribute="centerX" id="zJb-KZ-W9s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="play_btn_ref" destination="Aqf-Te-EOE" id="U3y-ZP-4Oa"/>
                         <outlet property="recognized_text" destination="w3s-Xc-lVn" id="IAE-DA-b7p"/>
+                        <outlet property="recognized_text2" destination="2eH-SO-1Va" id="JnI-iL-rdF"/>
+                        <outlet property="recognized_text3" destination="Xfu-FW-tmA" id="b5t-Pi-syS"/>
                         <outlet property="record_btn_ref" destination="yEt-Qb-osX" id="gfY-yo-fLW"/>
                         <outlet property="recordingTimeLabel" destination="ghp-RL-EpZ" id="NgC-jE-cSC"/>
                         <outlet property="upload_btn_ref" destination="eLk-wD-wJp" id="pzN-lA-Y9F"/>

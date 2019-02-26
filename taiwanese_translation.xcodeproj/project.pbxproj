@@ -17,6 +17,9 @@
 		F05D84F7210C9DCD00529FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D84F5210C9DCD00529FD3 /* LaunchScreen.storyboard */; };
 		F05D8502210C9DCF00529FD3 /* taiwanese_translationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D8501210C9DCF00529FD3 /* taiwanese_translationTests.swift */; };
 		F05D850D210C9DCF00529FD3 /* taiwanese_translationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D850C210C9DCF00529FD3 /* taiwanese_translationUITests.swift */; };
+		F0AFF8F0221FE63B005269F7 /* 3_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F0AFF8ED221FE63B005269F7 /* 3_2.wav */; };
+		F0AFF8F1221FE63B005269F7 /* 3_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F0AFF8EE221FE63B005269F7 /* 3_1.wav */; };
+		F0AFF8F2221FE63B005269F7 /* 3_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F0AFF8EF221FE63B005269F7 /* 3_3.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		F05D8508210C9DCF00529FD3 /* taiwanese_translationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taiwanese_translationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05D850C210C9DCF00529FD3 /* taiwanese_translationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taiwanese_translationUITests.swift; sourceTree = "<group>"; };
 		F05D850E210C9DCF00529FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0AFF8ED221FE63B005269F7 /* 3_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3_2.wav; sourceTree = "<group>"; };
+		F0AFF8EE221FE63B005269F7 /* 3_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3_1.wav; sourceTree = "<group>"; };
+		F0AFF8EF221FE63B005269F7 /* 3_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3_3.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,9 @@
 				F05D84EE210C9DCC00529FD3 /* ViewController.swift */,
 				F05D84F0210C9DCD00529FD3 /* Main.storyboard */,
 				F05D84F3210C9DCD00529FD3 /* Assets.xcassets */,
+				F0AFF8EE221FE63B005269F7 /* 3_1.wav */,
+				F0AFF8ED221FE63B005269F7 /* 3_2.wav */,
+				F0AFF8EF221FE63B005269F7 /* 3_3.wav */,
 				F05D84F5210C9DCD00529FD3 /* LaunchScreen.storyboard */,
 				F05D84F8210C9DCD00529FD3 /* Info.plist */,
 			);
@@ -280,9 +289,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AFF8F2221FE63B005269F7 /* 3_3.wav in Resources */,
 				F05D84F7210C9DCD00529FD3 /* LaunchScreen.storyboard in Resources */,
+				F0AFF8F1221FE63B005269F7 /* 3_1.wav in Resources */,
 				F05D84F4210C9DCD00529FD3 /* Assets.xcassets in Resources */,
 				F05D84F2210C9DCD00529FD3 /* Main.storyboard in Resources */,
+				F0AFF8F0221FE63B005269F7 /* 3_2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

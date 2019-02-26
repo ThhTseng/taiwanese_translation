@@ -19,6 +19,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     @IBOutlet weak var recognized_text: UITextField!
     @IBOutlet weak var upload_btn_ref: UIButton!
     
+    @IBOutlet weak var recognized_text2: UITextField!
+    @IBOutlet weak var recognized_text3: UITextField!
     
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
@@ -26,7 +28,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     var isAudioRecordingGranted:Bool!
     var isRecording = false
     var isPlaying = false
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,11 +109,34 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
     
     //MARK: Actions
     
+    @IBAction func playaudio(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            if let url = Bundle.main.url(forResource: "3_1", withExtension: "wav") {
+                audioPlayer = try? AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+        case 1:
+            if let url = Bundle.main.url(forResource: "3_2", withExtension: "wav") {
+                audioPlayer = try? AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+        case 2:
+            if let url = Bundle.main.url(forResource: "3_3", withExtension: "wav") {
+                audioPlayer = try? AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+        default:
+            break
+        }
+        
+    }
+    
     @IBAction func start_recording(_ sender: UIButton) {
         if(isRecording)
         {
             finishAudioRecording(success: true)
-            record_btn_ref.setTitle("Record", for: .normal)
+            sender.setTitle("錄音", for: .normal)
             play_btn_ref.isEnabled = true
             isRecording = false
         }
@@ -121,7 +146,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
             
             audioRecorder.record()
             meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
-            record_btn_ref.setTitle("Stop", for: .normal)
+            sender.setTitle("停止", for: .normal)
             play_btn_ref.isEnabled = false
             isRecording = true
         }
@@ -214,14 +239,21 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
         })
         present(ac, animated: true)
     }
-    func textchange(text: String){
+    func textchange(text: String,sender:Int){
         DispatchQueue.main.async{
-            self.recognized_text.text = text
-            self.upload_btn_ref.isEnabled = true
+            switch sender{
+            case 0:
+                self.recognized_text.text = text
+            case 1:
+                self.recognized_text2.text = text
+            default:
+                self.recognized_text3.text = text
+            }
+            
         }
     }
     
-    @IBAction func uploadfile(_ sender: Any) {
+    @IBAction func uploadfile(_ sender: UIButton) {
         if FileManager.default.fileExists(atPath: getFileUrl().path)
         {
             //金鑰
@@ -229,19 +261,20 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
             //選用模組,之後有針對醫療詞彙加強會更改main的字串
             var data:String = token+String("@@@main    A")
             
-            upload_btn_ref.isEnabled = false
+            sender.isEnabled = false
             let fileURL = getFileUrl()
             
             do{
                 //音檔
                 let audioData = try Data(contentsOf: fileURL)
                 let mydata = Data(data.utf8)+audioData
-                //**data count要用big endian
-                var count = mydata.count.bigEndian
+                //**data count要用big endian並大小為4bytes
+                var count = UInt32(mydata.count).bigEndian
                 let datacount = Data(bytes: &count ,
-                                     count: MemoryLayout.size(ofValue: count))
+                                     count: 4)
+                //print(MemoryLayout.size(ofValue: count))
                 
-                print(datacount)
+                
                 let client = TCPClient(address: "140.116.245.149", port: 2802)
                 switch client.connect(timeout: 5) {
                 case .success:
@@ -253,11 +286,10 @@ class ViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDel
                             let splitarray = response.components(separatedBy: "result:")
                             
                             //輸出
-                            print("responseString = \(String(describing: splitarray[0]))")
-                            self.textchange(text: splitarray[0])
+                            //print("responseString = \(String(describing: splitarray[0]))")
+                            self.textchange(text: splitarray[0],sender: sender.tag)
+                            sender.isEnabled = true
                         }
-                        
-                        
                     case .failure(let error):
                         print(error)
                     }
